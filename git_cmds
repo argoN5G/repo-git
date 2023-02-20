@@ -45,6 +45,12 @@ git commit -m "!!comment"
 git reset [file_name]
 git reset # all file will be untracked
 
+# add branch to the remote repo
+git remote add origin https://github.com/argN5G/firstrepo
+
+# push change
+git push -u origin master
+
 # commits log
 git log
 
@@ -97,12 +103,27 @@ git merge [branch_name]
 git push [repo] [master]
 
 
+# using GCM Git-Credential-Manager with gpg key pair
+git clone https://github.com/GitCredentialManager/git-credential-manager.git
+# read the README.md file & install GCM 
+cd git-credential-manager/src/linux
+./install-from-source.sh
 
+# generate gpg key pair
+gpg --gen-key
 
+# use gpg as GCM_CREDENTIAL_STORE
 
+git config --global credential.credentialStore gpg
 
+# use pass tool 
+apt install pass -y"
+# initiate pass with gpg-id
+pass init [gpg-id = username-id]
 
+# using GCM with git cache strorage (! not prefered : gpg is better)
 
-
+git config --global credential.credentialStore cache
+git config --global credential.cacheOptions "--timeout 300"
 
 
