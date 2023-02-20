@@ -113,11 +113,11 @@ cd git-credential-manager/src/linux
 gpg --gen-key
 
 # use gpg as GCM_CREDENTIAL_STORE
-
 git config --global credential.credentialStore gpg
 
 # use pass tool 
 apt install pass -y"
+
 # initiate pass with gpg-id
 pass init [gpg-id = username-id]
 
