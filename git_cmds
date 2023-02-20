@@ -45,6 +45,12 @@ git commit -m "!!comment"
 git reset [file_name]
 git reset # all file will be untracked
 
+# add branch to the remote repo
+git remote add origin https://github.com/argN5G/firstrepo
+
+# push change
+git push -u origin master
+
 # commits log
 git log
 
