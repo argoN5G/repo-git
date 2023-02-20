@@ -103,8 +103,20 @@ git merge [branch_name]
 git push [repo] [master]
 
 
+# using GCM Git-Credential-Manager with gpg key pair
+git clone https://github.com/GitCredentialManager/git-credential-manager.git
+# read the README.md file & install GCM 
+cd git-credential-manager/src/linux
+./install-from-source.sh
 
+# generate gpg key pair
+gpg --gen-key
 
+# use gpg as GCM_CREDENTIAL_STORE
+# use pass tool 
+apt install pass -y"
+# initiate pass with gpg-id
+pass init [gpg-id = username-id]
 
 
 
