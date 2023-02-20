@@ -1,8 +1,8 @@
-!#usr/bin/python3
+#!/usr/bin/python3
 
 
 def add(x, y):
-    pass
+    return x+y
 
     
 def substruct(x, y):
@@ -20,7 +20,10 @@ def devide(x, y):
 def square(x, y):
     pass
 
-
+print("!*!*!*   X & Y must be integer numbers :   ")
+X = int(input("print X: "))
+Y = int(input("Enter Y: "))
+print("addition: ", add(X,Y))
 
 
 
