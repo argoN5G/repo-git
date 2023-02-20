@@ -113,19 +113,8 @@ cd git-credential-manager/src/linux
 gpg --gen-key
 
 # use gpg as GCM_CREDENTIAL_STORE
-<<<<<<< HEAD
-# use pass tool 
-apt install pass -y"
-# initiate pass with gpg-id
-pass init [gpg-id = username-id]
-
-# using GCM with git cache strorage
-git config --global credential.credentialStore cache
-git config --global credential.cacheOptions "--timeout 300"
-=======
 
 git config --global credential.credentialStore gpg
->>>>>>> 2nd_branch
 
 # use pass tool 
 apt install pass -y"
