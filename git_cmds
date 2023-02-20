@@ -1,0 +1,108 @@
+#
+##
+### git : version control system that track documents updates
+
+# help manuals
+git help [cmd]
+git [cmd] --help
+
+# shows git version
+git --version
+
+## configure name & email
+git config --global user.name [name]
+git config --global user.email [email]
+
+#listing config parameters 
+git config --list
+
+## iniate a track for a project => a repository
+cd [project_directory]
+git init	# => git create a .git directory within that project files
+
+### delete a track of a project
+cd [project_directory]
+rm -rf .git
+
+## create a .gitignore file for "files to be ignored & hidden from tracking"
+touch .gitignore
+vim .gitignore # add files
+
+## show tracking status  
+git status 
+
+# add files to tracking
+git add [file_name]
+git add .gitignore
+
+# add all files
+git add -A
+
+# commit a change to the local repository
+git commit -m "!!comment"
+
+# reset a commitment & remove a file from staging area "tracking"
+git reset [file_name]
+git reset # all file will be untracked
+
+# commits log
+git log
+
+# get a repository
+git clone [url] [path_to_save]
+#! git clone ../repo_test .
+
+# show information about repo
+git remote -v
+git branch -a
+
+# show diffent changes
+git diff
+
+# push a changes to the remote repository
+git push [repository_name] [branch_name]
+
+# pull updates from a remote repository
+# show branches
+git branch
+
+# create a branch
+git branch [branch_name]
+
+# change to a branch
+git checkout [branch_name]
+# work on that branch & make changes wich not affect other bracnhs or remote repo
+# then you can merge to master branch & push changes to remote-repo
+
+# push a branch to remote-repo
+git push -u [repo-name] [branch_name]
+
+# list branchs
+git branch -a
+
+# delete a branch from locale
+git branch -d [branch_name]
+
+# delete branch from remote
+git push [repo_name] --delete [branch_name]
+
+# merge branchs
+git checkout master
+git pull [repo] [master=branch]
+# list merged branchs
+git branch --merged
+# apply merge of branchs
+git merge [branch_name]
+# push changes
+git push [repo] [master]
+
+
+
+
+
+
+
+
+
+
+
