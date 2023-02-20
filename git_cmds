@@ -102,7 +102,8 @@ git merge [branch_name]
 # push changes
 git push [repo] [master]
 
-
+##### ******** GCM & GPG Keys for HTTPS connections
+#
 # using GCM Git-Credential-Manager with gpg key pair
 git clone https://github.com/GitCredentialManager/git-credential-manager.git
 # read the README.md file & install GCM 
