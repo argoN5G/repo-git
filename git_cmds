@@ -1,6 +1,8 @@
 ### git : version control system that track documents updates
 ##
 #
+#** take a look in https://cli.github.com/manual/
+
 # help manuals
 	git help [cmd]
 	git [cmd] --help
@@ -132,6 +134,37 @@ git config --global credential.cacheOptions "--timeout 300"
 	cat ~/.ssh/id_ed25519.pub
   # copy the pub-key & past it in profile-setting-ssh&gpg keys
 
+#### Create a new repo from CLI
+#1 navigate to local directory where you would like to create 
+  #a local clone of your new project
 
+#2 use github subcommand : gh repo create
+	gh repo create
+	# 3 follow the github prompt
 
+# 4 => if you want to skip the prompt
+	gh repo create [repo_name] [flags]
+	gh repo create <repo_name> < --pubilc/private/internal > 
+  # flags:
+	-c, --clone # to clone it to local
+  # create a repo from an existing local repo 
+  	--sources [directory_path]
+  	# by default remote-repo-name will be source directory name
+  	--push	# to push any local commits to new repo
+	--add-readme # add a README file to new repo
+	-d	# description
+	--disable-issues
+	--disable-wiki
+	-g, --gitignore <string>  # gitingnore template
+	-h, --homepage <URL>	  # repo url
+	--include-all-branches
+	--internal		# make new repo internal
+	-l, --license		# openSource license
+	--private,--public
+	-r, --remote <name>	# remote name for new repo
+	-s, --source <dir_path> # use local repo as source for newrep
+	-t, --team <name>	#organization team to garanted access
+	-p, --template <repo>	# make newRepo based on template repo
+	
+	
 
