@@ -1,7 +1,6 @@
-###
 #!/usr/bin/python3
-
-import sys
+##
+###
 
 def add(x, y):
     return x+y
@@ -40,8 +39,6 @@ print("2- Substraction: \t", substruct(X,Y))
 print("3- Multiplication: \t", multiply(X,Y))
 print("4- Devision: \t\t", devide(X,Y))
 print("4- Square: \t\t", square(X,Y))
-
-print(str(X/Y)[2])
  
 
 
