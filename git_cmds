@@ -102,6 +102,15 @@ git merge [branch_name]
 # push changes
 git push [repo] [master]
 
+# logs & commits log
+git log --online
+git log -p
+git show
+git diff
+#git blame, revert, rebase, log, shortlog 
+
+
+
 ##### ******** GCM & GPG Keys for HTTPS connections
 #
 # using GCM Git-Credential-Manager with gpg key pair
@@ -126,7 +135,6 @@ pass init [gpg-id = username-id]
 
 git config --global credential.credentialStore cache
 git config --global credential.cacheOptions "--timeout 300"
-
 
 #### *******
 # using SSH
