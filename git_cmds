@@ -50,9 +50,12 @@
 # pull & push to remote repository
   # 1 add branches to remote repo (origin or main) 
 	git remote add origin https://github.com/profile/repo_name
-	git push -u origin master # [branch_name master or any other branch]
+	git push -u origin master 
+	# [branch_name master or any other branch]
 	git pull [repo] [branch]
 	git pull/push	# after setting up the -u cmd in push
+	# push to HEAD
+	git push --set-upstream origin HEAD
 
 # show commit logs & changes
   #git blame, revert, rebase, log, shortlog, show, diff 
