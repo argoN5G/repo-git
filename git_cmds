@@ -47,6 +47,9 @@
   # all file will be untracked
 	git reset
 
+# automatic push creation: origin main
+	git push --set-upstream origin HEAD	
+
 # pull & push to remote repository
   # 1 add branches to remote repo (origin or main) 
 	git remote add origin https://github.com/profile/repo_name
@@ -169,5 +172,27 @@ git config --global credential.cacheOptions "--timeout 300"
 	-t, --team <name>	#organization team to garanted access
 	-p, --template <repo>	# make newRepo based on template repo
 	
-	
+# managing repositories from gh CLI
+  # list all repositories
+  	gh repo list	
+  # create a remote repo from a local-repo
+  # default remote name will be local directory repo name  
+	gh repo create [repo_name] --source [local_repo] [--flags]
+  # gh help
+ 	gh --help
+	gh repo --help
+	gh repo edit --help
+  # rename a repo
+  	gh repo rename [new_remote_repo_name]
+  # delete a repo
+  # authorization required
+  	gh repo delete [repo-name] --yes
+	gh auth refresh -s delete_repo
 
+# forking an upstream repo to a new fork repo
+# that shares visibility setting & code
+# you need an organization membership to fork you own repo
+  # puplic repo on the internet
+  	gh repo fork [repo] --clone --remote 
+	# see gh repo fork --help | for more flags
+ 
