@@ -1,0 +1,3 @@
+Additional git commands to the git_cmds file
+	"=>"read a commit message from a file using --file command
+

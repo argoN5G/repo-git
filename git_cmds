@@ -40,6 +40,8 @@ git add -A
 
 # commit a change to the local repository
 git commit -m "!!comment"
+# read commit message from a file
+git commint -F <file name>  # or --file=<file name>
 
 # reset a commitment & remove a file from staging area "tracking"
 git reset [file_name]
