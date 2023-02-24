@@ -1,137 +1,115 @@
-#
-##
 ### git : version control system that track documents updates
-
+##
+#
 # help manuals
-git help [cmd]
-git [cmd] --help
+	git help [cmd]
+	git [cmd] --help
+  # shows git version
+	git --version
 
-# shows git version
-git --version
+## global configuration of name & email
+	git config --global user.name [name]
+	git config --global user.email [email]
+  # List config parameters 
+	git config --list  
 
-## configure name & email
-git config --global user.name [name]
-git config --global user.email [email]
+## iniate a track project directory for a repository
+  # git create a .git directory within that project files
+	cd [project_directory]
+	git init	
+  # to delete a track of a project just delete .git file
+	cd [local_repo_directory]
+	rm -rf .git
 
-#listing config parameters 
-git config --list
+  ## create a .gitignore file to hide private files
+	vim .gitignore # add private files here
 
-## iniate a track for a project => a repository
-cd [project_directory]
-git init	# => git create a .git directory within that project files
-
-### delete a track of a project
-cd [project_directory]
-rm -rf .git
-
-## create a .gitignore file for "files to be ignored & hidden from tracking"
-touch .gitignore
-vim .gitignore # add files
-
-## show tracking status  
-git status 
-
-# add files to tracking
-git add [file_name]
-git add .gitignore
-
-# add all files
-git add -A
+# tracking files with git
+  # show tracking status  
+	git status 
+  # add files to tracking
+	git add [file_name]
+	git add .gitignore
+  # add all files to the tracking object
+	git add -A 
 
 # commit a change to the local repository
-git commit -m "!!comment"
-# read commit message from a file
-git commint -F <file name>  # or --file=<file name>
+  # read commit from message -m
+	git commit -m "!!comment"
+  # read commit from a file
+	git commint -F <file name>  
+  	git commit --file=<file name>
 
 # reset a commitment & remove a file from staging area "tracking"
-git reset [file_name]
-git reset # all file will be untracked
+	git reset [file_name]
+  # all file will be untracked
+	git reset
 
-# add branch to the remote repo
-git remote add origin https://github.com/argN5G/firstrepo
+# pull & push to remote repository
+  # 1 add branches to remote repo (origin or main) 
+	git remote add origin https://github.com/profile/repo_name
+	git push -u origin master # [branch_name master or any other branch]
+	git pull [repo] [branch]
+	git pull/push	# after setting up the -u cmd in push
 
-# push change
-git push -u origin master
+# show commit logs & changes
+  #git blame, revert, rebase, log, shortlog, show, diff 
+	git log	[-p/--online]
+	git diff
+	git shortlog
+	git show
 
-# commits log
-git log
+# download a repository files (remote/local repositories)
+	git clone [url] [path_tobe_save]
+	git clone [local_repo_path] [path_tobe_saved]
+	# example1: git clone https://github.com/profile_name/repo_name.git .
+	# example2: git clone [/home/username/Desktop/local_repo] [/home/directory_name]
 
-# get a repository
-git clone [url] [path_to_save]
-#! git clone ../repo_test .
+# About branches configd
+  # show branches information
+	git remote -v
+	git branch -a
+	git branch
+  # create a branch
+	git branch [branch_name]
+  # change localtion to a branch
+	git checkout [branch_name]
+  #! work on that branch & make changes wich not affect other bracnhs or remote repo
+  # then you can merge to master branch & push changes to remote-repo
 
-# show information about repo
-git remote -v
-git branch -a
+  # delete a branch from locale
+	git branch -d [branch_name]
 
-# show diffent changes
-git diff
+  # delete branch from remote
+	git push [repo_name] --delete [branch_name]
 
-# push a changes to the remote repository
-git push [repository_name] [branch_name]
-
-# pull updates from a remote repository
-# show branches
-git branch
-
-# create a branch
-git branch [branch_name]
-
-# change to a branch
-git checkout [branch_name]
-# work on that branch & make changes wich not affect other bracnhs or remote repo
-# then you can merge to master branch & push changes to remote-repo
-
-# push a branch to remote-repo
-git push -u [repo-name] [branch_name]
-
-# list branchs
-git branch -a
-
-# delete a branch from locale
-git branch -d [branch_name]
-
-# delete branch from remote
-git push [repo_name] --delete [branch_name]
-
-# merge branchs
-git checkout master
-git pull [repo] [master=branch]
-# list merged branchs
-git branch --merged
-# apply merge of branchs
-git merge [branch_name]
-# push changes
-git push [repo] [master]
-
-# logs & commits log
-git log --online
-git log -p
-git show
-git diff
-#git blame, revert, rebase, log, shortlog 
-
+  # merge branchs
+  	git branch --merge	# list merged branchs
+	git checkout master	# change to master branch
+	git pull [repo] [master=branch]
+	git merge [second_branch_to_be_merged_with_master]
+	
 
 
 ##### ******** GCM & GPG Keys for HTTPS connections
 #
-# using GCM Git-Credential-Manager with gpg key pair
-git clone https://github.com/GitCredentialManager/git-credential-manager.git
-# read the README.md file & install GCM 
-cd git-credential-manager/src/linux
-./install-from-source.sh
+  # using GCM Git-Credential-Manager with gpg key pair
+	git clone https://github.com/GitCredentialManager/git-credential-manager.git
+  # read the README.md file & install GCM 
+ 	cd git-credential-manager/src/linux
+	./install-from-source.sh
 
-# generate gpg key pair
-gpg --gen-key
+  # generate gpg key pair
+	gpg --gen-key
 
-# use gpg as GCM_CREDENTIAL_STORE
-git config --global credential.credentialStore gpg
+  # use gpg as GCM_CREDENTIAL_STORE
+	git config --global credential.credentialStore gpg
 
-# use pass tool 
-apt install pass -y"
+  # use pass tool 
+	apt install pass -y"
 
-# initiate pass with gpg-id
-pass init [gpg-id = username-id]
+  # initiate pass with gpg-id
+	pass init [gpg-id = username-id]
 
 # using GCM with git cache strorage (! not prefered : gpg is better)
 
@@ -141,32 +119,18 @@ git config --global credential.cacheOptions "--timeout 300"
 #### *******
 # using SSH
 #
-# 1 generate ssh-key
-sh-keygen -t ed25519 -C "your_email@example.com"
-# or rsa
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+  # 1 generate ssh-key
+	sh-keygen -t ed25519 -C "your_email@example.com"
+  # or rsa
+	ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
-# 2 add the SSH-key to the ssh-agent
-eval "$(ssh-agent -s)"   # run ssh-agent in background
-ssh-add ~/.ssh/id_ed25519
+  # 2 add the SSH-key to the ssh-agent
+	eval "$(ssh-agent -s)"   # run ssh-agent in background
+	ssh-add ~/.ssh/id_ed25519
 
-# add ssh-pub-key to the git repo
-cat ~/.ssh/id_ed25519.pub
-# copy the pub-key & past it in profile-setting-ssh&gpg keys
-
-
-
-#### ******
-# using gpg pubKey
-
-# a comment
-
-
-
-
-
-
-
+  # add ssh-pub-key to the git repo
+	cat ~/.ssh/id_ed25519.pub
+  # copy the pub-key & past it in profile-setting-ssh&gpg keys
 
 
 
