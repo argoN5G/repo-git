@@ -1,0 +1,61 @@
+#####################################################################
+#	GitHub Command Line Interface - gh
+#
+
+#### Create a new repository from CLI (Automatic way)
+  # navigate to local directory where you would like to create 
+  # a local clone of your new project
+
+  #2 use github subcommand : gh repo create
+	gh repo create
+	# 3 follow the github prompt
+
+	# 4 => if you want to skip the prompt
+	gh repo create [repo_name] [flags]
+	gh repo create <repo_name> < --pubilc/private/internal > 
+  
+  # flags:
+	-c, --clone # to clone it to local
+  # create a repo from an existing local repo 
+  	--sources [directory_path]
+  	# by default remote-repo-name will be source directory name
+  	--push	# to push any local commits to new repo
+	--add-readme # add a README file to new repo
+	-d	# description
+	--disable-issues
+	--disable-wiki
+	-g, --gitignore <string>  # gitingnore template
+	-h, --homepage <URL>	  # repo url
+	--include-all-branches
+	--internal		# make new repo internal
+	-l, --license		# openSource license
+	--private,--public
+	-r, --remote <name>	# remote name for new repo
+	-s, --source <dir_path> # use local repo as source for newrep
+	-t, --team <name>	#organization team to garanted access
+	-p, --template <repo>	# make newRepo based on template repo
+	
+# managing repositories from gh CLI
+  # list all repositories
+  	gh repo list	
+  # create a remote repo from a local-repo
+  # default remote name will be local directory repo name  
+	gh repo create [repo_name] --source [local_repo] [--flags]
+  # gh help
+ 	gh --help
+	gh repo --help
+	gh repo edit --help
+  # rename a repo
+  	gh repo rename [new_remote_repo_name]
+  # delete a repo
+  # authorization required
+  	gh repo delete [repo-name] --yes
+	gh auth refresh -s delete_repo
+
+# forking an upstream repo to a new fork repo
+# that shares visibility setting & code
+# you need an organization membership to fork you own repo
+  # puplic repo on the internet
+  	gh repo fork [repo] --clone --remote 
+	# see gh repo fork --help | for more flags
+ 
