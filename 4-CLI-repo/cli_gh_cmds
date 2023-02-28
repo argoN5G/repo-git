@@ -1,0 +1,48 @@
+#### Create a new repo from CLI
+#1 navigate to local directory where you would like to create 
+  #a local clone of your new project
+
+#2 use github subcommand : gh repo create
+	gh repo create
+	# 3 follow the github prompt
+
+# 4 => if you want to skip the prompt
+	gh repo create [repo_name] [flags]
+	gh repo create <repo_name> < --pubilc/private/internal > 
+  # flags:
+	-c, --clone # to clone it to local
+  # create a repo from an existing local repo 
+  	--sources [directory_path]
+  	# by default remote-repo-name will be source directory name
+  	--push	# to push any local commits to new repo
+	--add-readme # add a README file to new repo
+	-d	# description
+	--disable-issues
+	--disable-wiki
+	-g, --gitignore <string>  # gitingnore template
+	-h, --homepage <URL>	  # repo url
+	--include-all-branches
+	--internal		# make new repo internal
+	-l, --license		# openSource license
+	--private,--public
+	-r, --remote <name>	# remote name for new repo
+	-s, --source <dir_path> # use local repo as source for newrep
+	-t, --team <name>	#organization team to garanted access
+	-p, --template <repo>	# make newRepo based on template repo
+	
+	
+# fork a repository 
+  # a fork repo is a new repo that share visibility setting & code
+  #  with the upstream head repository
+  	gh repo fork --help
+	gh repo fork [repo]
+	--org "octo-org" # in an organization
+	--clone=true	 # to clone it 
+  # config git to sync fork-repo with upstream repo
+  # git pull changes from upstream into local cloned-fork
+  # configure a remote-repo for the forked-repo
+  	gh repo fork [Repo] --remote=true
+  # specify remote-repo name
+  	gh repo fork [repo] --remote-name "main-remote-repo"
+
+ 
