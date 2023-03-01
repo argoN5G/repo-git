@@ -1,0 +1,30 @@
+############### 	Adding Keys to github using gh-cli	############
+#
+#
+### PGP
+  # generate gpg key pairs "if not done yet!!"
+	$ gpg --gen-key
+
+  # list your keys
+	gpg --list-keys
+
+  # export public key using the user-id ,in an ascci file.
+	gpg --armor --output ~/.gnupg/PublicKey.asc --export [user-id=username <email>]
+
+  # add pgp public key to the github profile
+	gh --armor --export [user-id] | gh gpg-key add -
+	# or
+	gh gpg-key add [ path-to-key= ~/.gnupg/PublicKey.asc ]
+
+
+### SSH
+  # generate ssh key (if not done yet)
+  	$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+	$ cat ~/.ssh/[key.pub]
+	# you may add the key to the ssh-agent
+	
+  # add the ssh key to github using gh-cli
+	$ gh ssh-key add [path-to-key= ~/.ssh/id_.pub]
+
+	
+####################################################################################
