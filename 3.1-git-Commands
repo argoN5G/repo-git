@@ -41,6 +41,10 @@
   # read commit from a file
 	git commint -F <file name>  
   	git commit --file=<file name>
+  # sign a commit with bgp
+	git commit -S -m "msg comment"
+	# show signature
+	git log --show-signature	
 
 # reset a commitment & remove a file from staging area "tracking"
 	git reset [file_name]

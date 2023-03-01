@@ -1,0 +1,16 @@
+# 1st method by add -S to your commit or tag
+
+#2- Access the git config file and add some lines
+
+vim ~/.git.conf
+
+[user]
+	signingkey = [your pgp email-id]
+
+[commit]
+	pgpsign = true
+
+[tag]
+	pgpsign = true
+
+
