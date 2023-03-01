@@ -61,8 +61,11 @@
  	gh --help
 	gh repo --help
 	gh repo edit --help
+	# example of editing description
+	gh repo edit -d "put your new repository description here"
   # rename a repo
   	gh repo rename [new_remote_repo_name]
+  
   # delete a repo
   # authorization required
   	gh repo delete [repo-name] --yes
@@ -75,3 +78,4 @@
   	gh repo fork [repo] --clone --remote 
 	# see gh repo fork --help | for more flags
  
+# go through the manual help for more deep dive
