@@ -2,15 +2,22 @@
 
 #2- Access the git config file and add some lines
 
-vim ~/.git.conf
+ 	$ vim ~/.git.conf
 
-[user]
-	signingkey = [your pgp email-id]
+	[user]
+		signingkey = [your pgp email-id]
 
-[commit]
-	pgpsign = true
+	[commit]
+		pgpsign = true
 
-[tag]
-	pgpsign = true
+	[tag]
+		pgpsign = true
+
+# file editing done!
+############################
+
+# override config options make unsigned commits if needed:
+	$ git commit --no-gpg-sign -m "message"
+	$ git tag --no-sign [v1.2.3]
 
 
