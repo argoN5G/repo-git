@@ -2,9 +2,25 @@
 #	GitHub Command Line Interface - gh
 #
 
+# add gpg-key to the github profile
+# if gpg-key not yet generated => take a look on 1-GPG-GCM file
+
+ $ gpg --list-keys
+ $ gpg --amor --export "user-id <email>" | gh gpg-key add -
+# or output the public key in ascci file & use it
+ $ gpg --amor --output ~/.gnupg/PublicKey.asc --export "your-user-id"
+ $ gh gpg-key add ~/.gnupg/PublicKey.asc
+
+# add SSH-key to github 
+# if ssh-key not yet generated => take a look at git-commands down file
+
+ $ gh ssh-key add ~/.ssh/[key-file-name].pub 
+
+
 #### Create a new repository from CLI (Automatic way)
-  # navigate to local directory where you would like to create 
-  # a local clone of your new project
+
+  #1 navigate to local directory where you would like to create 
+  #  the local clone of your new project
 
   #2 use github subcommand : gh repo create
 	gh repo create
@@ -12,7 +28,7 @@
 
 	# 4 => if you want to skip the prompt
 	gh repo create [repo_name] [flags]
-	gh repo create <repo_name> < --pubilc/private/internal > 
+	gh repo create <repo_name>  [--pubilc/private/internal , --clone , --add-readme , --gitignore ... ] 
   
   # flags:
 	-c, --clone # to clone it to local

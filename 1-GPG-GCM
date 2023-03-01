@@ -19,3 +19,6 @@
   # initiate pass with gpg-id
 	pass init [gpg-id = username-id]
 
+
+# you can add you gpg public key to the github profile using gh-cli
+# check GH-CLI file
