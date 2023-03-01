@@ -11,46 +11,11 @@
 	gh: is Command Line Interface for github
 	-> used to create config manage your repositories from the Terminal
 
-3- git-commands:
+3- Adding GPG & SSH Keys to github:
+	-> generating gpg and ssh keys then add them using gh-cli
+
+4- git-commands:
 	-> set of CLI commands to manage your projects
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
  
