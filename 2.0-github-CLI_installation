@@ -1,5 +1,7 @@
 # installing github CLI "gh" for ubuntu
 
+# 1 Install gh CLI
+## put them all in one line
 type -p curl >/dev/null || sudo apt install curl -y
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
 && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -7,10 +9,42 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && sudo apt update \
 && sudo apt install gh -y
 
-# setup authentication
-gh auth login	# a cli prompt will shows up
+# 2 setup the authentication for gh cli
+	gh auth login   # a cli prompt will shows up
 
-# use gh to create a repo
-gh repo create [name] [flags]
+#3 use gh to create a repo automaticly
+	gh repo create
 
+# or take a look on 2.1-GitHub-CLI for more information about flags
+
+############ Done
+
+
+
+### step by step
+## 1 process to gh instalation
+# check and install curl
+type -p curl >/dev/null || sudo apt install curl -y
+# download githubcli gpg keyring
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg
+#
+sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+
+# change the file mod
+sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+
+# add them to the apt source list
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+
+# update 
+sudo apt update
+
+# now you can install it 
+sudo apt install gh -y
+
+# 2 setup the authentication for gh cli
+        gh auth login   # a cli prompt will shows up
+
+#3 use gh to create a repo automaticly
+        gh repo create
 
