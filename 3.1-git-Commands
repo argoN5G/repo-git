@@ -86,6 +86,8 @@
 	git branch [branch_name]
   # change localtion to a branch
 	git checkout [branch_name]
+  # combine both commands
+  	git checkout -b [new_branch]
   #! work on that branch & make changes wich not affect other bracnhs or remote repo
   # then you can merge to master branch & push changes to remote-repo
 
