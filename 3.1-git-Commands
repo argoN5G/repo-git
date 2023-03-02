@@ -90,9 +90,8 @@
   	git checkout -b [new_branch]
   #! work on that branch & make changes wich not affect other bracnhs or remote repo
   # then you can merge to master branch & push changes to remote-repo
-
   # delete a branch from locale
-	git branch -d [branch_name]
+	git branch -d [branch_name] 
 
   # delete branch from remote
 	git push [repo_name] --delete [branch_name]
@@ -102,9 +101,24 @@
 	git checkout master	# change to master branch
 	git pull [repo] [master=branch]
 	git merge [second_branch_to_be_merged_with_master]
-	
+  # merge & sign (-S not needed if git.conf configured with gpgsign)
+  	git merge --verify-sign -S [second_branch]
 
 
+# Undo git changes & Mistakes
+  # Undo changes before staging area
+	# undo file changes checkout command
+  	git status/diff
+	git checkout file name
+  
+  # after stagin area & commit
+  	git add [file]
+	git commit -m "message mistake"
+	git log
+	git commit --amend -m "new fixed message"
+  
+
+ 
 ##### ******** GCM & GPG Keys for HTTPS connections
 #
   # using GCM Git-Credential-Manager with gpg key pair
