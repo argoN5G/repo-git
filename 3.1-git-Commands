@@ -116,7 +116,8 @@
 	git commit -m "message mistake"
 	git log
 	git commit --amend -m "new fixed message"
-  
+  # keep old commit msg for new commit
+  	git commit --amend  
 
  
 ##### ******** GCM & GPG Keys for HTTPS connections
