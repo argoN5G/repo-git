@@ -119,6 +119,8 @@
   # keep old commit msg for new commit
   	git commit --amend  
 
+# delete untracked files f & directories d
+	git clear -df
  
 ##### ******** GCM & GPG Keys for HTTPS connections
 #
