@@ -1,0 +1,38 @@
+		##########		Branchs			##########
+###################							###################
+#
+# 1 Indepandant Branchs
+  #=> branchs will not be affected by each others changes & update unless being merged
+  # create a branch
+	git btranch [new_branch_name]
+	# or 
+	git checkout -b [new_branch_name]
+  # list local & remote branchs
+	git branch -a
+	git remote -v
+  # change state to & from branchs
+	git checkout [branch_name]
+  
+  # make an independant branch
+	git checkout [new_branch_name]
+     #1 set to track same remote name
+	git remote add origin https://github.com/profile_name/repo_name.git
+	# or
+	git branch --set-upstream-to=origin/new_branch
+     #2 set to push to same name remote branch (not the main or master)
+	git push -u origin [new_branch_name]
+	#or
+	git push -u origin HEAD
+
+
+# 1 dependant branchs
+  #=> will be affected by each others changes
+  # create a new branch
+	git checkout -b [new_branch_name]
+  #1 set new_branch to track remote master branch
+	git branch --set-upstream-to=origin/master
+  #2 config new branch to push updates to remote HEAD master
+	git push -u origin HEAD:master
+	# set default push to upstream
+	git config push.default upstream
+  
