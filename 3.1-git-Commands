@@ -34,6 +34,7 @@
 	git add .gitignore
   # add all files to the tracking object
 	git add -A 
+	git add -p
 
 # commit a change to the local repository
   # read commit from message -m
@@ -48,7 +49,8 @@
   # change old commits
   	# change just the previous commit
   	git commit --amend
-		# change it & save file
+		# change it & save file => do not push
+	git commit --amend --no-edit
 	git push -f
         # change old ones
         git --rebase -i HEAD-[number of privous commits]
