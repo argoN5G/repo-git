@@ -53,7 +53,6 @@
         # change old ones
         git --rebase -i HEAD-[number of privous commits]
 
-
 # reset a commitment & remove a file from staging area "tracking"
 	git reset [file_name]
   # all file will be untracked
