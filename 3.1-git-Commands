@@ -45,6 +45,14 @@
 	git commit -S -m "msg comment"
 	# show signature
 	git log --show-signature	
+  # change old commits
+  	# change just the previous commit
+  	git commit --amend
+		# change it & save file
+	git push -f
+        # change old ones
+        git --rebase -i HEAD-[number of privous commits]
+
 
 # reset a commitment & remove a file from staging area "tracking"
 	git reset [file_name]
